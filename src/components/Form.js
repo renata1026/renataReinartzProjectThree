@@ -6,7 +6,7 @@ function Form(props){
             <label htmlFor="productPicker">User</label>
             <div className="box">
                 <select
-                    value={props.userChoice}
+                    value={props.userChoiceProduct}
                     id="orientationPicker"
                     onChange={props.handleFormChange}
                 >
@@ -19,7 +19,7 @@ function Form(props){
 
                 </select>
                 <select
-                    value={props.userPrice}
+                    value={props.userChoicePrice}
                     id="orientationPicker"
                     onChange={props.handlePriceChange}
                 >

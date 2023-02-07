@@ -2,49 +2,48 @@ import {useEffect, useState } from 'react';
 //import axios//
 import axios from 'axios';//pulled from Node modules folder
 // import Form from "./components/Form";
-import Loader from './Loader';
-import Header from './Header';
 import Form from './Form';
-import Navbar from './Navbar';
-import importImg from '../images/productNotFound.png';
 import Footer from './Footer';
+import Header from './Header';
+import importImg from '../images/productNotFound.png';
+import Loader from './Loader';
+import Navbar from './Navbar';
 import Results from './Results';
 
 
-//products are a variable containing our pieces of products
-//setProducts is a function to update products
 const Makeup = () => {
-
+    //products are a variable containing our pieces of products
+    //setProducts is a function to update products
     //use state is setup for products
     const [products, setProducts] = useState([]);
     //Use state is set to filtered products. Filtered products will be rendered to the page.
     const [filteredProducts,setFilteredProducts] = useState([]);
-    //filter the price
-    const [userChoice, setUserChoice] = useState("");
-    const [userPrice, setUserPrice] = useState("");
-    
+    //Use state is set to userChoiceProduct.
+    const [userChoiceProduct, setUserChoiceProduct] = useState("");
+    //Use state is set to userChoicePrice.
+    const [userChoicePrice, setUserChoicePrice] = useState("");
+    //Use state is set to userQuery.
     const [userQuery,setUserQuery] = useState("");
-    const [userPriceQuery, setUserPriceQuery] = useState("");
+    
+    const [userChoicePriceQuery, setUserChoicePriceQuery] = useState("");
     //We are setting the default state of loading to true
     const [loading, setLoading] = useState(true);
-    //this hook will run only when makeup app mounts
-    
+    //We are setting the default state of formError to false
     const[formError,setFormError] = useState(false);
 
     const handleFormChange = (event) => {
-        setUserChoice(event.target.value)
+        setUserChoiceProduct(event.target.value)
     }
     // Creating a handlePriceChange function that will update the user price choice state based on their selection
     const handlePriceChange = (event) =>{
-        setUserPrice(event.target.value)
+        setUserChoicePrice(event.target.value)
     }
 
     //handleFormSubmit function will prevent the form from refreshing
     const handleFormSubmit = (event) => {
         event.preventDefault()
-        console.log(userChoice)
-        setUserQuery(userChoice)
-        setUserPriceQuery(userPrice)
+        setUserQuery(userChoiceProduct)
+        setUserChoicePriceQuery(userChoicePrice)
     }
     
     useEffect(() => {
@@ -56,7 +55,7 @@ const Makeup = () => {
                 setProducts(response.data);//all products will be rendered
                 setFilteredProducts(response.data);//filtered products will be      
                  //rendered.
-                //loading is set to false so it will stop loading once products are loaded  on the page
+                //loading is set to false so it will stop loading once products are loaded on the page
                 setLoading(false)
                 setFormError(false);
             })
@@ -70,18 +69,18 @@ const Makeup = () => {
         })
         setFilteredProducts(filteredNewProducts)
     },[userQuery,products])
-    
+     //created a filter for the price range $1-10, $10-$15, and $15-25
     const displayProducts = 
         filteredProducts.filter((price) => {
             return (
                 // filter prices based on selected drop down menu
-                (userPriceQuery === "1-10") ?
+                (userChoicePriceQuery === "1-10") ?
                     parseInt(price.price) > 1 && parseInt(price.price) < 10 :
 
-                (userPriceQuery === "10-15") ?
+                (userChoicePriceQuery === "10-15") ?
                     parseInt(price.price) > 11 && parseInt(price.price) <= 14 :
 
-                (userPriceQuery === "15-25") ?
+                (userChoicePriceQuery === "15-25") ?
                     parseInt(price.price) > 15 : parseInt(price.price) > 15
             )        
             //filtering the products to 20 per page
@@ -96,14 +95,14 @@ const Makeup = () => {
                     <Form handleFormChange={handleFormChange}
                     handlePriceChange={handlePriceChange}
                     handleFormSubmit={handleFormSubmit}
-                    userChoice={userChoice}
-                    userPrice={userPrice}
+                    userChoiceProduct={userChoiceProduct}
+                    userChoicePrice={userChoicePrice}
                     />
                     <Results
                     formError={formError}
                     />
                     {/* <Form /> */}
-                    {/* if page is loading then return loader if loading is complete than   return products */}
+                    {/* if page is loading then return loader if loading is complete than return products */}
                     {loading
                         ? < Loader />
                     : <div className="products">
