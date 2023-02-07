@@ -28,12 +28,7 @@ const Makeup = () => {
     //We are setting the default state of loading to true
     const [loading, setLoading] = useState(true);
     //this hook will run only when makeup app mounts
-    //this will set the state for the shopping cart/nav menu
-    const[openCart, setOpenCart] = useState(false);
-    // Creating a handleFormChange function that will update the user product choice state
-    // to their selection
-    const[cartItems, setCartItems] = useState([]);
-
+    
     const[formError,setFormError] = useState(false);
 
     const handleFormChange = (event) => {
@@ -51,28 +46,12 @@ const Makeup = () => {
         setUserQuery(userChoice)
         setUserPriceQuery(userPrice)
     }
-    // will toggle the open and close of the actual element
-    const handleOpenCart = () =>{
-        // setOpenCart(!openCart)
-    }
-    // const emptyArray = []
-    const handleAddToCart = (e) =>{
-        
-            // emptyArray.push(filteredProducts[e.target.id])
-            // setCartItems((current)=>({
-            //     array: [...current,filteredProducts[e.target.id]]
-            // }));
-            // console.log(cartItems);
-    }
-
+    
     useEffect(() => {
         //API request
         axios({
             url: "https://makeup-api.herokuapp.com/api/v1/products.json",
-            // params: {
-            //     product_type: 'eyeliner',
-            // },
-        })
+            })
             .then(response => {
                 setProducts(response.data);//all products will be rendered
                 setFilteredProducts(response.data);//filtered products will be      
@@ -99,25 +78,18 @@ const Makeup = () => {
                 (userPriceQuery === "1-10") ?
                     parseInt(price.price) > 1 && parseInt(price.price) < 10 :
 
-                    // new Intl.NumberFormat("en-US", {
-                    //     style: "decimal",
-                    // }).format(price)
-                    (userPriceQuery === "10-15") ?
-                        parseInt(price.price) > 11 && parseInt(price.price) <= 14 :
+                (userPriceQuery === "10-15") ?
+                    parseInt(price.price) > 11 && parseInt(price.price) <= 14 :
 
-                        (userPriceQuery === "15-25") ?
-                            parseInt(price.price) > 15 : parseInt(price.price) > 15
+                (userPriceQuery === "15-25") ?
+                    parseInt(price.price) > 15 : parseInt(price.price) > 15
             )        
             //filtering the products to 20 per page
             }).slice(0, 20)
     
     return (
                 <>
-                <Navbar handleOpenCart={handleOpenCart} />
-                {openCart &&
-                <ul>
-                    <li>Hello</li>
-                </ul>}
+                <Navbar />
                 <Header />
                 <div className="wrapper">
                     {/* passing the props from makeup AKA parent to the form AKA child */}
@@ -145,7 +117,7 @@ const Makeup = () => {
                                     <p className="name">{product.name}</p>
                                     <p className="price">PRICE:${Number(product.price).toFixed(2)}</p>
                                     <div className="buttons">
-                                        <button onClick = {handleAddToCart}className="addToCartBttn" id={index}>Add to Cart</button>
+                                        <button className="addToCartBttn" id={index}>Add to Cart</button>
                                     </div>
                                 </div>
 
