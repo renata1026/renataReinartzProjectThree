@@ -69,7 +69,7 @@ const Makeup = () => {
             return product.product_type === userQuery
         })
         setFilteredProducts(filteredNewProducts)
-    },[userQuery])
+    },[userQuery,products])
     
     const displayProducts = 
         filteredProducts.filter((price) => {
