@@ -371,6 +371,7 @@ button:hover {
   text-transform: uppercase;
   font-size: var(--fs-button--);
   font-weight: bold;
+  padding-bottom: 1em;
 }
 
 /* nav shopping cart icon*/
