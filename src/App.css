@@ -257,21 +257,23 @@ html {
 
 /* base styling */
 :root {
-  --purple-color: rgb(204, 165, 217);
-  --pink-color: #FFBCD9;
-  --white-color: #fff;
-  --black-color: rgb(19, 19, 19);
-  --transition: all 300ms ease-in-out;
+  --purple-color--: rgb(204, 165, 217);
+  --pink-color--: #FFBCD9;
+  --white-color--: #fff;
+  --black-color--: rgb(19, 19, 19);
+  --transition--: all 300ms ease-in-out;
   --fs-heading--: 6rem;
   --fs-subheading--: 4rem;
   --fs-body--: 2.5rem;
   --fs-links--: 2rem;
+  --fs-product--: 1.25rem;
+  --fs-button--: 1rem;
   --ff-heading--: 'Gruppo', cursive;
   --ff-body--: 'Urbanist', sans-serif;
 }
 
 html {
-  background-color: var(--black-color);
+  background-color: var(--black-color--);
   font-family: var(--ff-body--);
 }
 
@@ -282,9 +284,9 @@ html {
 }
 
 button {
-  font-size: 0.6rem;
+  font-size: var(--fs-button--);
   margin-right: 0.3em;
-  background: var(--purple-color);
+  background: var(--purple-color--);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -292,36 +294,36 @@ button {
   border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--white-color);
+  color: var(--black-color--);
   cursor: pointer;
   width: 100%;
 }
 
 button:hover {
-  background-color: var(--pink-color);
+  background-color: var(--pink-color--);
   transition: all .4s ease-in-out;
 }
 
 .cartIcon:hover {
-  background-color: var(--black-color);
+  background-color: var(--black-color--);
   ;
 }
 
 .submit {
   width: 32%;
-  background-color: var(--pink-color);
-  color: var(--black-color);
+  background-color: var(--pink-color--);
+  color: var(--black-color--);
 }
 
 .submit:hover {
-  background-color: var(--white-color);
+  background-color: var(--white-color--);
 }
 
 /* Navbar*/
 .navbar {
   width: 100%;
   height: 80px;
-  background-color: var(--black-color);
+  background-color: var(--black-color--);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -344,8 +346,8 @@ button:hover {
 
 .heroHeadline {
   margin: 0;
-  color: var(--black-color);
-  font-weight: strong;
+  color: var(--black-color--);
+  font-weight: bold;
   font-size: var(--fs-heading--);
   font-family: var(--ff-heading--);
   text-transform: uppercase;
@@ -366,8 +368,8 @@ button:hover {
 
 .subtitle {
   text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: strong;
+  font-size: var(--fs-button--);
+  font-weight: bold;
 }
 
 /* nav shopping cart icon*/
@@ -388,14 +390,14 @@ button:hover {
 
 .cartIcon {
   width: 5%;
-  background-color: var(--black-color);
+  background-color: var(--black-color--);
   margin-right: 20px;
 }
 
 
 .links a {
   text-decoration: none;
-  color: var(--white-color);
+  color: var(--white-color--);
   margin-left: 20px;
   font-size: 25px;
 }
@@ -407,7 +409,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 18px;
-  background: var(--white-color);
+  background: var(--white-color--);
   text-align: center;
 }
 
@@ -446,13 +448,14 @@ img {
 
 .name {
   text-transform: uppercase;
-  font-family: var(--ff-heading--);
-  font-size: var(--ff-body--);
+  font-family: var(--ff-body--);
+  font-size: var(--fs-product--);
 }
 
 .price {
   font-family: var(--ff-body--);
   font-size: var(--ff-links--);
+  font-weight: bold;
 }
 
 .product-container:hover,
@@ -505,12 +508,12 @@ img {
 #orientationPicker {
   width: 150px;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: var(--fs-button--);
   font-family: var(--ff-body--);
   text-transform: uppercase;
   padding: 10px;
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: var(--black-color--);
+  color: var(--white-color--);
 }
 
 #orientationPicker option {
@@ -521,11 +524,10 @@ img {
 }
 
 /* styling for loader*/
-
 .loader {
   text-align: center;
   border: 16px solid #f3f3f3;
-  border-top: 16px solid var(--purple-color);
+  border-top: 16px solid var(--purple-color--);
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -543,8 +545,8 @@ img {
 }
 
 .footer {
-  background-color: var(--black-color);
-  border: 17px dashed var(--white-color);
+  background-color: var(--black-color--);
+  border: 17px dashed var(--white-color--);
 }
 
 .footerWrapper {
@@ -554,8 +556,8 @@ img {
 .footerHeading {
   display: flex;
   justify-content: center;
-  font-family: var(--fs-heading);
-  color: var(--white-color);
+  font-family: var(--fs-heading--);
+  color: var(--white-color--);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -565,7 +567,7 @@ img {
   justify-content: space-between;
   align-items: center;
   font-family: var(--fs-subHeading--);
-  color: var(--white-color);
+  color: var(--white-color--);
   text-transform: uppercase;
 }
 
@@ -595,8 +597,8 @@ span {
 #envelope,
 #calendar,
 #shipping {
-  background-color: var(--black-color);
-  border: 1px solid var(--white-color);
+  background-color: var(--black-color--);
+  border: 1px solid var(--white-color--);
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -604,53 +606,103 @@ span {
   line-height: 100px;
   vertical-align: middle;
   padding: 30px;
-  color: var(--white-color);
+  color: var(--white-color--);
 }
 
 .flex {
   display: flex;
   align-items: center;
+  color: var(--white-color--);
 }
 
 .copyright {
   text-align: center;
-  color: var(--white-color);
+  color: var(--white-color--);
 }
 
 .copyright a {
-  color: var(--purple-color);
+  color: var(--pink-color--);
   font-size: var(--ff-body--);
 }
 
 .copyright a:hover,
 .copyright a:focus {
-  color: var(--pink-color);
+  color: var(--white-color--);
 }
 
 .error {
-  color: var(--white-color);
+  color: var(--white-color--);
+}
+
+/* styling for icon and movement animation */
+.topToBtn {
+  position: relative;
+}
+
+.iconPosition {
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+}
+
+.iconStyle {
+  background-color: var(--black-color--);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+
+.iconStyle:hover {
+  animation: none;
+  background: #fff;
+  color: var(--black-color--);
+  border: 2px solid var(--black-color--);
+}
+
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @media (max-width:1000px) {
-
-  /* .shipping {
-    display: none;
-  } */
-
   .products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  /* .chat,
-  .schedule {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
 }
 
 @media (max-width:750px) {
+
+  .cartIcon {
+    margin-right: 30px;
+  }
+
+  .hero {
+    height: 100vh;
+  }
 
   .heroHeadline {
     font-size: 3rem;
@@ -662,16 +714,14 @@ span {
 
   .box {
     display: flex;
-    top: 50%;
+    top: 85%;
     left: 50%;
-
   }
 
   #orientationPicker {
     width: 110px;
     font-size: 0.7rem;
   }
-
 
   html,
   body {

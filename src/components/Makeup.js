@@ -9,6 +9,7 @@ import importImg from '../images/productNotFound.png';
 import Loader from './Loader';
 import Navbar from './Navbar';
 import Results from './Results';
+import ScrollToTop from './ScrollToTop';
 
 
 const Makeup = () => {
@@ -24,7 +25,6 @@ const Makeup = () => {
     const [userChoicePrice, setUserChoicePrice] = useState("");
     //Use state is set to userQuery.
     const [userQuery,setUserQuery] = useState("");
-    
     const [userChoicePriceQuery, setUserChoicePriceQuery] = useState("");
     //We are setting the default state of loading to true
     const [loading, setLoading] = useState(true);
@@ -120,13 +120,13 @@ const Makeup = () => {
                                         <button className="addToCartBttn" id={index}>Add to Cart</button>
                                     </div>
                                 </div>
-
+                            
                             ))
                         }</>}
-                        
-                    </div>
+                       </div>
                     }
                 </div>
+                <ScrollToTop />
                 <Footer />
                 </>
             
