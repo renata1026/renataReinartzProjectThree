@@ -773,10 +773,4 @@ span {
     flex-direction: column;
     align-items: center;
   }
-
-  .subtitle,
-  .pSubtitle {
-    display: none;
-  }
-
 }
