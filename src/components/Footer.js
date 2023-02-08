@@ -3,7 +3,7 @@ import { Envelope,CalendarBlank,Package } from 'phosphor-react';
 
 const Footer = () => {
     return (
-       <div className='footer'>
+    <div className='footer'>
        <div className = 'wrapper footerWrapper'> 
             <div className="footerHeading">
                 <h2>Want More Help?</h2>
@@ -16,7 +16,6 @@ const Footer = () => {
                                 <h3>Chat With <span>an Expert</span></h3>
                             </div>
                         </div>
-                    
                         <div className="schedule">
                             <CalendarBlank id="calendar"size={50} />
                             <div className="flex">
@@ -31,12 +30,10 @@ const Footer = () => {
                         </div>
                     </div>
              <div className="copyright">
-                <p>Developed & Designed by <a href="https://www.renata-reinartz.com">Renata Reinartz </a>
-                  | Prepared for Juno College <a href="https://www.junocollege.com">Juno College</a></p>
+                <p>Developed & Designed by <a href="https://www.renata-reinartz.com">Renata Reinartz </a> Prepared for Juno College <a href="https://www.junocollege.com">Juno College</a></p>
             </div>
         </div>
-        </div>
-    
+    </div>
     )
 }
 

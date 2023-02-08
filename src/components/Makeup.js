@@ -11,40 +11,35 @@ import Navbar from './Navbar';
 import Results from './Results';
 import ScrollToTop from './ScrollToTop';
 
-
 const Makeup = () => {
     //products are a variable containing our pieces of products
     //setProducts is a function to update products
-    //use state is setup for products
+    // Setting state with our application
     const [products, setProducts] = useState([]);
-    //Use state is set to filtered products. Filtered products will be rendered to the page.
     const [filteredProducts,setFilteredProducts] = useState([]);
-    //Use state is set to userChoiceProduct.
     const [userChoiceProduct, setUserChoiceProduct] = useState("");
-    //Use state is set to userChoicePrice.
     const [userChoicePrice, setUserChoicePrice] = useState("");
-    //Use state is set to userQuery.
     const [userQuery,setUserQuery] = useState("");
     const [userChoicePriceQuery, setUserChoicePriceQuery] = useState("");
     //We are setting the default state of loading to true
     const [loading, setLoading] = useState(true);
     //We are setting the default state of formError to false
     const[formError,setFormError] = useState(false);
-
+    // grabbing the product selected by the user
     const handleFormChange = (event) => {
         setUserChoiceProduct(event.target.value)
     }
-    // Creating a handlePriceChange function that will update the user price choice state based on their selection
+    // grabbing the price selected by the user
     const handlePriceChange = (event) =>{
         setUserChoicePrice(event.target.value)
     }
-    //handleFormSubmit function will prevent the form from refreshing
+    // stopping the default action of the form
     const handleFormSubmit = (event) => {
         event.preventDefault()
         setUserQuery(userChoiceProduct)
         setUserChoicePriceQuery(userChoicePrice)
     }
-    // hook into the inital/first render of APP 
+    // hook into the initial/first render of API call 
     useEffect(() => {
         //API request
         axios({
@@ -52,8 +47,7 @@ const Makeup = () => {
             })
             .then(response => {
                 setProducts(response.data);//all products will be rendered
-                setFilteredProducts(response.data);//filtered products will be      
-                 //rendered.
+                setFilteredProducts(response.data);//filtered products will be     rendered.
                 //loading is set to false so it will stop loading once products are loaded on the page
                 setLoading(false)
                 setFormError(false);
@@ -107,7 +101,8 @@ const Makeup = () => {
                     {loading
                         ? < Loader />
                     : <div className="products">
-                        {/* filter the price  */}
+                        {/* display item not found image if no products return
+                        it they return then display products*/}
                         {displayProducts.length === 0 ? <img src={importImg} id="notFound"alt='import'></img> : <>{
                             displayProducts.map((product,index) => (
                                 //will load selections from the API
@@ -120,10 +115,11 @@ const Makeup = () => {
                                         <button className="addToCartBttn" id={index}>Add to Cart</button>
                                     </div>
                                 </div>
-                            
                             ))
-                        }</>}
-                       </div>
+                        }
+                </>
+                        }
+                    </div>
                     }
                 </div>
                 <ScrollToTop />
