@@ -38,14 +38,13 @@ const Makeup = () => {
     const handlePriceChange = (event) =>{
         setUserChoicePrice(event.target.value)
     }
-
     //handleFormSubmit function will prevent the form from refreshing
     const handleFormSubmit = (event) => {
         event.preventDefault()
         setUserQuery(userChoiceProduct)
         setUserChoicePriceQuery(userChoicePrice)
     }
-    
+    // hook into the inital/first render of APP 
     useEffect(() => {
         //API request
         axios({
@@ -62,13 +61,15 @@ const Makeup = () => {
             .catch(error => setFormError(true)) // sets an error if the API returns and error
             
     }, [])
-    //created a useEffect to store the filtered products which will return the product type
+    // created a useEffect to store the filtered products which will return the product type
     useEffect(()=> {
         const filteredNewProducts = products.filter((product) => {
             return product.product_type === userQuery
         })
         setFilteredProducts(filteredNewProducts)
-    },[userQuery,products])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[userQuery])
+    
      //created a filter for the price range $1-10, $10-$15, and $15-25
     const displayProducts = 
         filteredProducts.filter((price) => {

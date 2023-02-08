@@ -31,8 +31,8 @@ const Footer = () => {
                         </div>
                     </div>
              <div className="copyright">
-                {/* <p>Developed & Designed by <a href="https://www.renata-reinartz.com">Renata Reinartz </a>
-                  | Prepared for Juno College <a href="https://www.junocollege.com">Juno College</a></p> */}
+                <p>Developed & Designed by <a href="https://www.renata-reinartz.com">Renata Reinartz </a>
+                  | Prepared for Juno College <a href="https://www.junocollege.com">Juno College</a></p>
             </div>
         </div>
         </div>
