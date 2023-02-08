@@ -129,5 +129,4 @@ const Makeup = () => {
         );
 };
 
-
 export default Makeup;

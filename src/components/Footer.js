@@ -7,7 +7,6 @@ const Footer = () => {
        <div className = 'wrapper footerWrapper'> 
             <div className='footerHeading'>
                 <h2>Want More Help?</h2>
-                
             </div>
                     <div className='footerCta'>
                          <div className='chat'>
