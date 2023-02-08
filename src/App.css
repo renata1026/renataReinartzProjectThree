@@ -313,6 +313,7 @@ button:hover {
   width: 32%;
   background-color: var(--pink-color--);
   color: var(--black-color--);
+  margin-right: 0;
 }
 
 .submit:hover {
@@ -485,7 +486,7 @@ img {
 .box {
   display: flex;
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   gap: 3%;
@@ -511,10 +512,7 @@ select {
   -webkit-appearance: none;
   appearance: none;
   -webkit-border-radius: 0;
-  text-align-last: center;
   text-align: center;
-  -ms-text-align-last: center;
-  -moz-text-align-last: center;
 }
 
 #orientationPicker {
@@ -710,6 +708,8 @@ span {
 
   .cartIcon {
     margin-right: 30px;
+    overflow-x: visible;
+    overflow-y: scroll
   }
 
   .hero {
@@ -726,13 +726,13 @@ span {
 
   .box {
     display: flex;
-    top: 85%;
+    top: 75%;
     left: 50%;
   }
 
   #orientationPicker {
     width: 110px;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   html,
