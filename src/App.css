@@ -331,7 +331,7 @@ button:hover {
 
 /* hero image*/
 .hero {
-  min-height: 50vh;
+  min-height: 75vh;
   background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url("./images/makeup.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -485,7 +485,7 @@ img {
 .box {
   display: flex;
   position: absolute;
-  top: 49%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   gap: 3%;
@@ -511,6 +511,10 @@ select {
   -webkit-appearance: none;
   appearance: none;
   -webkit-border-radius: 0;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
 }
 
 #orientationPicker {
