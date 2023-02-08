@@ -707,9 +707,7 @@ span {
 @media (max-width:750px) {
 
   .cartIcon {
-    margin-right: 30px;
-    overflow-x: visible;
-    overflow-y: scroll
+    padding-left: 0;
   }
 
   .hero {
