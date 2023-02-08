@@ -10,7 +10,7 @@ const Navbar = (props) => {
                 <Link to="/"className= "makeup">makeup</Link>
                 {/* <Link to="/cart"> */}
                 <button onClick={props.handleOpenCart} className="cartIcon">
-                    <ShoppingCart size={32}/>
+                    <ShoppingCart size={28}/>
                 </button>
                 {/* </Link> */}
             </div>
