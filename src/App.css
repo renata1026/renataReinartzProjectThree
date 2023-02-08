@@ -774,7 +774,8 @@ span {
     align-items: center;
   }
 
-  .cartIcon {
+  .cartIcon,
+  .pSubtitle {
     display: none;
   }
 }
