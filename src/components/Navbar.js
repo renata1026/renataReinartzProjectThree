@@ -6,14 +6,14 @@ const Navbar = (props) => {
     return (
     <div className="wrapper">
         <div className="navbar">
-            <div className="links">
+            {/* <div className="links"> */}
                 <Link to="/"className= "makeup">makeup</Link>
                 {/* <Link to="/cart"> */}
                 <button onClick={props.handleOpenCart} className="cartIcon">
                     <ShoppingCart size={24}/>
                 </button>
                 {/* </Link> */}
-            </div>
+            {/* </div> */}
         </div>
     </div>
     );
