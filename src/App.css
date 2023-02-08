@@ -334,7 +334,7 @@ button:hover {
 /* hero image*/
 .hero {
   min-height: 75vh;
-  background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url("./images/makeup.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url('./images/makeup.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,7 +355,7 @@ button:hover {
   text-transform: uppercase;
 }
 
-.h2Title {
+.heroSubTitle {
   margin: 0;
   font-size: var(--fs-body--);
   margin-bottom: 1em;
@@ -725,7 +725,7 @@ span {
 
   .box {
     display: flex;
-    top: 80%;
+    top: 90%;
     left: 50%;
   }
 
@@ -776,7 +776,7 @@ span {
   }
 
 
-  .pSubtitle {
+  .pHero {
     display: none;
   }
 

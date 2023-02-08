@@ -2,29 +2,29 @@ function Form(props){
     return (
     <>
        <form onSubmit={props.handleFormSubmit}>
-                <label htmlFor="productPicker"class="visuallyhidden">User</label>
-            <div className="box">
+                <label htmlFor='productPicker'class='visuallyhidden'>User</label>
+            <div className='box'>
                 <select
                     value={props.userChoiceProduct}
-                    id="orientationPicker"
+                    id='orientationPicker'
                     onChange={props.handleFormChange}>
-                    <option value="" disabled>Product:</option>
-                    <option value="eyeshadow">eyeshadow</option>
-                    <option value="eyeliner">eyeliner</option>
-                    <option value="powder">powder</option>
-                    <option value="foundation">foundation</option>
-                    <option value="lipstick">lipstick</option>
+                    <option value='' disabled>Product:</option>
+                    <option value='eyeshadow'>eyeshadow</option>
+                    <option value='eyeliner'>eyeliner</option>
+                    <option value='powder'>powder</option>
+                    <option value='foundation'>foundation</option>
+                    <option value='lipstick'>lipstick</option>
                 </select>
                 <select
                     value={props.userChoicePrice}
-                    id="orientationPicker"
+                    id='orientationPicker'
                     onChange={props.handlePriceChange}>
-                    <option value="" disabled>Price:</option>
-                    <option value="1-10">$1-10</option>
-                    <option value="10-15">$10-$15</option>
-                    <option value="15-30">$15 and up</option>
+                    <option value='' disabled>Price:</option>
+                    <option value='1-10'>$1-10</option>
+                    <option value='10-15'>$10-$15</option>
+                    <option value='15-30'>$15 and up</option>
                 </select>
-                <button className="submit">Submit</button>
+                <button className='submit'>Submit</button>
             </div>
         </form>
     </>

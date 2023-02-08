@@ -1,7 +1,7 @@
 import {useEffect, useState } from 'react';
 //import axios//
 import axios from 'axios';//pulled from Node modules folder
-// import Form from "./components/Form";
+// import Form from './components/Form';
 import Form from './Form';
 import Footer from './Footer';
 import Header from './Header';
@@ -17,10 +17,10 @@ const Makeup = () => {
     // Setting state with our application
     const [products, setProducts] = useState([]);
     const [filteredProducts,setFilteredProducts] = useState([]);
-    const [userChoiceProduct, setUserChoiceProduct] = useState("");
-    const [userChoicePrice, setUserChoicePrice] = useState("");
-    const [userQuery,setUserQuery] = useState("");
-    const [userChoicePriceQuery, setUserChoicePriceQuery] = useState("");
+    const [userChoiceProduct, setUserChoiceProduct] = useState('');
+    const [userChoicePrice, setUserChoicePrice] = useState('');
+    const [userQuery,setUserQuery] = useState('');
+    const [userChoicePriceQuery, setUserChoicePriceQuery] = useState('');
     //We are setting the default state of loading to true
     const [loading, setLoading] = useState(true);
     //We are setting the default state of formError to false
@@ -43,7 +43,7 @@ const Makeup = () => {
     useEffect(() => {
         //API request
         axios({
-            url: "https://makeup-api.herokuapp.com/api/v1/products.json",
+            url: 'https://makeup-api.herokuapp.com/api/v1/products.json',
             })
             .then(response => {
                 setProducts(response.data);//all products will be rendered
@@ -69,13 +69,13 @@ const Makeup = () => {
         filteredProducts.filter((price) => {
             return (
                 // filter prices based on selected drop down menu
-                (userChoicePriceQuery === "1-10") ?
+                (userChoicePriceQuery === '1-10') ?
                     parseInt(price.price) > 1 && parseInt(price.price) < 10 :
 
-                (userChoicePriceQuery === "10-15") ?
+                (userChoicePriceQuery === '10-15') ?
                     parseInt(price.price) > 11 && parseInt(price.price) <= 14 :
 
-                (userChoicePriceQuery === "15-25") ?
+                (userChoicePriceQuery === '15-25') ?
                     parseInt(price.price) > 15 : parseInt(price.price) > 15
             )        
             //filtering the products to 20 per page
@@ -85,7 +85,7 @@ const Makeup = () => {
                 <>
                 <Navbar />
                 <Header />
-                <div className="wrapper">
+                <div className='wrapper'>
                     {/* passing the props from makeup AKA parent to the form AKA child */}
                     <Form handleFormChange={handleFormChange}
                     handlePriceChange={handlePriceChange}
@@ -100,19 +100,19 @@ const Makeup = () => {
                     {/* if page is loading then return loader if loading is complete than return products */}
                     {loading
                         ? < Loader />
-                    : <div className="products">
+                    : <div className='products'>
                         {/* display item not found image if no products return
                         it they return then display products*/}
-                        {displayProducts.length === 0 ? <img src={importImg} id="notFound"alt='import'></img> : <>{
+                        {displayProducts.length === 0 ? <img src={importImg} id='notFound'alt='import'></img> : <>{
                             displayProducts.map((product,index) => (
                                 //will load selections from the API
                                 <div key={product.id}
-                                    className="product-container">
-                                    <img src={`https://${product.api_featured_image}`} alt=""></img>
-                                    <p className="name">{product.name}</p>
-                                    <p className="price">PRICE:${Number(product.price).toFixed(2)}</p>
-                                    <div className="buttons">
-                                        <button className="addToCartBttn" id={index}>Add to Cart</button>
+                                    className='product-container'>
+                                    <img src={`https://${product.api_featured_image}`} alt=''></img>
+                                    <p className='name'>{product.name}</p>
+                                    <p className='price'>PRICE:${Number(product.price).toFixed(2)}</p>
+                                    <div className='buttons'>
+                                        <button className='addToCartBttn' id={index}>Add to Cart</button>
                                     </div>
                                 </div>
                             ))

@@ -8,7 +8,7 @@ const ScrollToTop = () => {
 // control the visibility of the "scroll-to-top" button,
 const [showTopBtn, setShowTopBtn] = useState(false);
 useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
             setShowTopBtn(true);
         } else {
@@ -19,16 +19,16 @@ useEffect(() => {
 const goToTop = () => {
     window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
     });
 };
 
     return (
         <div className="topToBtn">
-            {" "}
+            {' '}
             {showTopBtn && (
-                <ArrowUp className="iconPosition iconStyle" size={32} onClick={goToTop} />
-            )}{" "}
+                <ArrowUp className='iconPosition iconStyle' size={32} onClick={goToTop} />
+            )}{''}
         </div>
     );
 };
