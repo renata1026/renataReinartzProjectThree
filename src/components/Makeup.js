@@ -45,7 +45,7 @@ const Makeup = () => {
     useEffect(() => {
         //API request
         axios({
-            url: 'https://makeup-api.herokuappcom/api/v1/products.json',
+            url: 'https://makeup-api.herokuapp.com/api/v1/products.json',
             })
             .then(response => {
                 setProducts(response.data);//all products will be rendered
