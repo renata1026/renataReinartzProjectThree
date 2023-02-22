@@ -15,6 +15,7 @@ const Makeup = () => {
     //products are a variable containing our pieces of products
     //setProducts is a function to update products
     // Setting state with our application
+    
     const [products, setProducts] = useState([]);
     const [filteredProducts,setFilteredProducts] = useState([]);
     const [userChoiceProduct, setUserChoiceProduct] = useState('');
@@ -25,6 +26,7 @@ const Makeup = () => {
     const [loading, setLoading] = useState(true);
     //We are setting the default state of formError to false
     const[formError,setFormError] = useState(false);
+    const[apiError, setApiError] = useState(false);
     // grabbing the product selected by the user
     const handleFormChange = (event) => {
         setUserChoiceProduct(event.target.value)
@@ -43,7 +45,7 @@ const Makeup = () => {
     useEffect(() => {
         //API request
         axios({
-            url: 'https://makeup-api.herokuapp.com/api/v1/products.json',
+            url: 'https://makeup-api.herokuappcom/api/v1/products.json',
             })
             .then(response => {
                 setProducts(response.data);//all products will be rendered
@@ -51,8 +53,13 @@ const Makeup = () => {
                 //loading is set to false so it will stop loading once products are loaded on the page
                 setLoading(false)
                 setFormError(false);
+                setApiError(false);
             })
-            .catch(error => setFormError(true)) // sets an error if the API returns and error
+            .catch(error =>{
+                setFormError(true)
+                setLoading(false)
+                setApiError(true)
+            }) // sets an error if the API returns and error
             
     }, [])
     // created a useEffect to store the filtered products which will return the product type
@@ -98,6 +105,8 @@ const Makeup = () => {
                     />
                     {/* <Form /> */}
                     {/* if page is loading then return loader if loading is complete than return products */}
+                    {apiError
+                        ?(<p>Error occurred</p>):null}
                     {loading
                         ? < Loader />
                     : <div className='products'>

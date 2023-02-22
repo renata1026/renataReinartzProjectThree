@@ -1,7 +1,6 @@
 function Form(props){
     return (
-    <>
-       <form onSubmit={props.handleFormSubmit}>
+           <form onSubmit={props.handleFormSubmit}>
                 <label htmlFor='productPicker'class='visuallyhidden'>User</label>
             <div className='box'>
                 <select
@@ -27,8 +26,7 @@ function Form(props){
                 <button className='submit'>Submit</button>
             </div>
         </form>
-    </>
-    )
+       )
 }
     
 

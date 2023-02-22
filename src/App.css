@@ -300,11 +300,13 @@ button {
   width: 100%;
 }
 
-button:hover {
+button:hover,
+button:focus {
   background-color: var(--pink-color--);
   transition: all .4s ease-in-out;
 }
 
+.cartIcon:hover,
 .cartIcon:hover {
   background-color: var(--black-color--);
   ;
@@ -317,7 +319,8 @@ button:hover {
   margin-right: 0;
 }
 
-.submit:hover {
+.submit:hover,
+.submit:focus {
   background-color: var(--white-color--);
 }
 
@@ -669,7 +672,8 @@ span {
   transition: all .5s ease-in-out;
 }
 
-.iconStyle:hover {
+.iconStyle:hover,
+.iconStyle:focus {
   animation: none;
   background: var(--pink-color--);
   color: var(--black-color--);
@@ -780,7 +784,4 @@ span {
     display: none;
   }
 
-  /* .cartIcon {
-    display: none;
-  } */
 }
