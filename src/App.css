@@ -307,7 +307,7 @@ button:focus {
 }
 
 .cartIcon:hover,
-.cartIcon:hover {
+.cartIcon:focus {
   background-color: var(--black-color--);
   ;
 }
